@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gnosis-monitor
+  labels:
+    app: gnosis-monitor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gnosis-monitor-bot
+  template:
+    metadata:
+      labels:
+        app: gnosis-monitor-bot
+    spec:
+      containers:
+        - name: gnosis-monitor-bot
+          image: IMAGE_NAME
+          imagePullPolicy: IfNotPresent
+          command: ["python", "main.py"]
+          env:
+            - name: LOG_LEVEL
+              value: 'info'
