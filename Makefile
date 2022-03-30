@@ -8,7 +8,7 @@ shell:
 # Manifest Validators
 validate_manifest:
 	rm -f .manifest
-	kustomize build .deploy/$(TARGET_ENVIRONMENT) >> .manifest
+	kustomize build .deploy/ >> .manifest
 	[ -s .manifest ] || (echo "Manifest is Empty" ; exit 2)
 	kubeval .manifest --kubernetes-version 1.18.0 --ignore-missing-schemas
 	echo "Manifest Validated"
