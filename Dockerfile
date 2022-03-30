@@ -1,6 +1,7 @@
 FROM python:3.9
 
 ADD main.py /
+ARG BOT_TOKEN
 ENV TOKEN=$BOT_TOKEN
 
 RUN apt-get remove libexpat1 libexpat1-dev -y
