@@ -10,3 +10,7 @@ docker build -t gnosis-multisig-monitor .
 ```
 docker run -t gnosis-multisig-monitor
 ```
+
+### Deploying
+
+New container will be built and pushed to ECR on push to main. K8s manifest will be updated in badger-kube-manifests with new container and ArgoCD will pick up and deploy to EKS cluster.
