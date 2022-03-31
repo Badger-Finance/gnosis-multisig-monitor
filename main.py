@@ -144,7 +144,7 @@ signatures: **{len(confirmations)}/{confirmations_required}**
 executed: **{is_executed}**
 tx status: **{is_successful}**
 
-cgithub tx log: [https://github.com/orgs/Badger-Finance/projects/25/views/11](https://github.com/orgs/Badger-Finance/projects/25/views/11)
+general tx log: [https://github.com/orgs/Badger-Finance/projects/25/views/11](https://github.com/orgs/Badger-Finance/projects/25/views/11)
 
 (modified {modified_date}, created {creation_date})
 """
