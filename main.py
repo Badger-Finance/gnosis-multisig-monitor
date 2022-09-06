@@ -26,10 +26,10 @@ SAFES = {
     "0x042B32Ac6b453485e357938bdC38e0340d4b9276": ["treasury_ops", "Mainnet", 3],
     "0xf109c50684EFa12d4dfBF501eD4858F25A4300B3": ["treasury_ops", "Fantom", 3],
     "0xA9ed98B5Fb8428d68664f3C5027c62A10d45826b": ["treasury_voter", "Mainnet", 5],
-    "0xD4868d98849a58F743787c77738D808376210292": ["fin_ops", "Mainnet", 3],
-    "0x6F76C6A1059093E21D8B1C13C4e20D8335e2909F": ["politician", "Mainnet", 3],
+    # "0xD4868d98849a58F743787c77738D808376210292": ["fin_ops", "Mainnet", 3],
+    # "0x6F76C6A1059093E21D8B1C13C4e20D8335e2909F": ["politician", "Mainnet", 3],
     "0xB76782B51BFf9C27bA69C77027e20Abd92Bcf3a8": ["ibbtc", "Mainnet", 3],
-    "0x9faA327AAF1b564B569Cb0Bc0FDAA87052e8d92c": ["recovered", "Mainnet", 3],
+    # "0x9faA327AAF1b564B569Cb0Bc0FDAA87052e8d92c": ["recovered", "Mainnet", 3],
 }
 GNOSIS_URLS = {
     "Mainnet": "https://safe-transaction.gnosis.io",
@@ -53,14 +53,14 @@ EXPLORER_URLS = {
 }
 MENTIONS = {
     "dev": "<@766785323110891580>",
-    "techops": "<@&892875156106670141>",
-    "treasury_vault": "<@&970726077544665198>",
-    "treasury_ops": "<@&939175878544486420>",
-    "treasury_voter": "<@&970726077544665198>",
-    "fin_ops": "<@&951489375030636594>",
-    "politician": "<@&955928657388507196>",
-    "ibbtc": "<@&892875156106670141>",
-    "recovered": "<@766785323110891580>",
+    "techops": "<@&1016649224575787019>",
+    "treasury_vault": "<@&1015338392487202887>",
+    "treasury_ops": "<@&1015337910268080128>",
+    "treasury_voter": "<@&1015338392487202887>",
+    "fin_ops": "<@&1015340237389570079>",
+    # "politician": "<@&955928657388507196>",
+    "ibbtc": "<@&1016649224575787019>",
+    # "recovered": "<@1016649224575787019>",
 }
 HEADERS = {"accept": "application/json"}
 BOT = commands.Bot(command_prefix=["."])
