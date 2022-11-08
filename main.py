@@ -32,10 +32,10 @@ SAFES = {
     # "0x9faA327AAF1b564B569Cb0Bc0FDAA87052e8d92c": ["recovered", "Mainnet", 3],
 }
 GNOSIS_URLS = {
-    "Mainnet": "https://safe-transaction.gnosis.io",
-    "Binance Smart Chain": "https://safe-transaction.bsc.gnosis.io",
-    "Polygon": "https://safe-transaction.polygon.gnosis.io",
-    "Arbitrum": "https://safe-transaction.arbitrum.gnosis.io",
+    "Mainnet": "https://safe-transaction-mainnet.safe.global/",
+    "Binance Smart Chain": "https://safe-transaction-bsc.safe.global/",
+    "Polygon": "https://safe-transaction-polygon.safe.global/",
+    "Arbitrum": "https://safe-transaction-arbitrum.safe.global/",
     "Fantom": "https://safe-txservice.fantom.network",
 }
 GNOSIS_SLUGS = {
@@ -121,7 +121,7 @@ async def get_data():
                     if chain == "Fantom":
                         gnosis_url = f"https://safe.fantom.network/#/safes/{address}/transactions"
                     else:
-                        gnosis_url = f"https://gnosis-safe.io/app/{GNOSIS_SLUGS[chain]}:{address}/transactions/{safe_tx_hash}"
+                        gnosis_url = f"https://app.safe.global/{GNOSIS_SLUGS[chain]}:{address}/transactions/tx?id=multisig_{address}_{safe_tx_hash}"
                     if safe_tx["transactionHash"] is None:
                         tx_hash = "n/a"
                         tx_url = "n/a"
