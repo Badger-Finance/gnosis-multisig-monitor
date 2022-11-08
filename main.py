@@ -30,12 +30,15 @@ SAFES = {
     # "0x6F76C6A1059093E21D8B1C13C4e20D8335e2909F": ["politician", "Mainnet", 3],
     "0xB76782B51BFf9C27bA69C77027e20Abd92Bcf3a8": ["ibbtc", "Mainnet", 3],
     # "0x9faA327AAF1b564B569Cb0Bc0FDAA87052e8d92c": ["recovered", "Mainnet", 3],
+    "0x0D5eDB3ECbB15EF4EaD105c018fEd4e1d173B335": ["dev", "Optimism", 3],
+    "0x8D05c5DA2a3Cb4BeB4C5EB500EE9e3Aa71670733": ["techops", "Optimism", 2],
 }
 GNOSIS_URLS = {
     "Mainnet": "https://safe-transaction-mainnet.safe.global/",
     "Binance Smart Chain": "https://safe-transaction-bsc.safe.global/",
     "Polygon": "https://safe-transaction-polygon.safe.global/",
     "Arbitrum": "https://safe-transaction-arbitrum.safe.global/",
+    "Optimism": "https://safe-transaction-optimism.safe.global/",
     "Fantom": "https://safe-txservice.fantom.network",
 }
 GNOSIS_SLUGS = {
@@ -43,6 +46,7 @@ GNOSIS_SLUGS = {
     "Arbitrum": "arb1",
     "Binance Smart Chain": "bnb",
     "Polygon": "matic",
+    "Optimism": "oeth",
 }
 EXPLORER_URLS = {
     "Mainnet": "https://etherscan.io/tx/",
@@ -50,6 +54,7 @@ EXPLORER_URLS = {
     "Polygon": "https://polygonscan.com/tx/",
     "Arbitrum": "https://arbiscan.io/tx/",
     "Fantom": "https://ftmscan.com/tx/",
+    "Optimism": "https://optimistic.etherscan.io/tx/",
 }
 MENTIONS = {
     "dev": "<@766785323110891580>",
