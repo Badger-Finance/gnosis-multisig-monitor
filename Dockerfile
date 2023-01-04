@@ -18,6 +18,7 @@ RUN apt-get install linux-libc-dev>=5.10.92-2 libc6-dev -y
 RUN apt-get install libtiff5>=4.2.0-1+deb11u1 -y
 RUN apt-get install zlib1g>=1:1.2.11.dfsg-2+deb11u1 -y
 RUN apt-get install libxml2>=2.9.10+dfsg-6.7+deb11u3 -y
+RUN apt-get install libksba8>=1.5.0-3+deb11u2 -y
 RUN apt-get install git -y
 
-RUN pip install requests==2.26.0 discord.py==1.7.3
+RUN pip install setuptools==65.5.1 requests==2.26.0 discord.py==1.7.3
