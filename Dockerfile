@@ -20,5 +20,6 @@ RUN apt-get install zlib1g>=1:1.2.11.dfsg-2+deb11u1 -y
 RUN apt-get install libxml2>=2.9.10+dfsg-6.7+deb11u3 -y
 RUN apt-get install libksba8>=1.5.0-3+deb11u2 -y
 RUN apt-get install git -y
+RUN apt-get install libde265-0>=1.0.11-0+deb11u1 -y
 
 RUN pip install setuptools==65.5.1 requests==2.26.0 discord.py==1.7.3
