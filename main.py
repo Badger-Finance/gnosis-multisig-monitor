@@ -8,7 +8,15 @@ from discord.ext import tasks, commands
 
 TOKEN = os.getenv("TOKEN")
 CHANNEL_PUBLIC = 954047687202836540  # multisig-monitor
-CHANNEL_PRIVATE = 1012022586907050085  # multisig
+CHANNELS_PRIVATE = {
+    "techops": 1159212671770566757,  # tech_ops_msig
+    "treasury": 1159212813034737704, # treasury_msig
+    "dev": 1159212813034737704, # treasury_msig
+    "ibbtc": 1159212813034737704, # treasury_msig
+    # "fin_ops": 1012022586907050085, # multisig
+    # "politician": 1012022586907050085, # multisig
+    # "recovered": 1012022586907050085, # multisig
+}
 API_CALL_LOOP_PERIOD = 30
 SAFES = {
     "0xB65cef03b9B89f99517643226d76e286ee999e77": ["dev", "Mainnet", 3],
@@ -187,7 +195,7 @@ tx status: **{is_successful}**
                         channel = BOT.get_channel(CHANNEL_PUBLIC)
                         await channel.send(embed=embed)
                     if private:
-                        channel = BOT.get_channel(CHANNEL_PRIVATE)
+                        channel = BOT.get_channel(CHANNELS_PRIVATE[SAFES[address][0]])
                         await channel.send(embed=embed)
                         if mention:
                             await channel.send(MENTIONS[SAFES[address][0]])
