@@ -14,7 +14,7 @@ CHANNELS_PRIVATE = {
     "treasury_vault": 1159212813034737704, # treasury_vault
     "treasury_ops": 1159523577830322287, # treasury_ops
     "treasury_voter": 1159523642464542801, # treasury_voter
-    "ibbtc": 1159212671770566757, # badger_tech_ops
+    "ibbtc": 1159523577830322287, # treasury_ops
 }
 API_CALL_LOOP_PERIOD = 30
 SAFES = {
@@ -62,10 +62,10 @@ EXPLORER_URLS = {
 MENTIONS = {
     "dev": "<@766785323110891580>", # DAPP
     "techops": "<@&1015337028495360040>", # TECH_OPS_MULTISIG
-    "treasury_vault": "<@1015337028495360040", # TREASURY_MULTISIG
-    "treasury_ops": "<@1015337028495360040", # TREASURY_MULTISIG
-    "treasury_voter": "<@1015337028495360040", # TREASURY_MULTISIG
-    "ibbtc": "<@&1015337028495360040>", # TECH_OPS_MULTISIG
+    "treasury_vault": "<@1015338392487202887", # TREASURY_MULTISIG
+    "treasury_ops": "<@1015338392487202887", # TREASURY_MULTISIG
+    "treasury_voter": "<@1015338392487202887", # TREASURY_MULTISIG
+    "ibbtc": "<@&1015338392487202887>", # TREASURY_MULTISIG
 }
 HEADERS = {"accept": "application/json"}
 BOT = commands.Bot(command_prefix=["."])
