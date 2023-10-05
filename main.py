@@ -9,13 +9,12 @@ from discord.ext import tasks, commands
 TOKEN = os.getenv("TOKEN")
 CHANNEL_PUBLIC = 954047687202836540  # multisig-monitor
 CHANNELS_PRIVATE = {
-    "techops": 1159212671770566757,  # tech_ops_msig
-    "treasury": 1159212813034737704, # treasury_msig
-    "dev": 1159212813034737704, # treasury_msig
-    "ibbtc": 1159212813034737704, # treasury_msig
-    # "fin_ops": 1012022586907050085, # multisig
-    # "politician": 1012022586907050085, # multisig
-    # "recovered": 1012022586907050085, # multisig
+    "dev": 1159524009390641276, # Badger_dev
+    "techops": 1159212671770566757,  # badger_tech_ops
+    "treasury_vault": 1159212813034737704, # treasury_vault
+    "treasury_ops": 1159523577830322287, # treasury_ops
+    "treasury_voter": 1159523642464542801, # treasury_voter
+    "ibbtc": 1159212671770566757, # badger_tech_ops
 }
 API_CALL_LOOP_PERIOD = 30
 SAFES = {
@@ -24,22 +23,18 @@ SAFES = {
     "0x329543f0F4BB134A3f7a826DC32532398B38a3fA": ["dev", "Binance Smart Chain", 2],
     "0x4977110Ed3CD5eC5598e88c8965951a47dd4e738": ["dev", "Polygon", 3],
     "0x4c56ee3295042f8A5dfC83e770a21c707CB46f5b": ["dev", "Fantom", 3],
+    "0x0D5eDB3ECbB15EF4EaD105c018fEd4e1d173B335": ["dev", "Optimism", 3],
     "0x86cbD0ce0c087b482782c181dA8d191De18C8275": ["techops", "Mainnet", 3],
     "0x292549E6bd5a41aE4521Bb8679aDA59631B9eD4C": ["techops", "Arbitrum", 3],
-    # '0x777061674751834993bfBa2269A1F4de5B4a6E7c': ['techops', 'Binance Smart Chain', 3],
     "0xeb7341c89ba46CC7945f75Bd5dD7a04f8FA16327": ["techops", "Polygon", 3],
     "0x781E82D5D49042baB750efac91858cB65C6b0582": ["techops", "Fantom", 3],
-    "0xD0A7A8B98957b9CD3cFB9c0425AbE44551158e9e": ["treasury", "Mainnet", 5],
-    "0x45b798384c236ef0d78311D98AcAEc222f8c6F54": ["treasury", "Fantom", 3],
-    "0x042B32Ac6b453485e357938bdC38e0340d4b9276": ["treasury", "Mainnet", 3],
-    "0xf109c50684EFa12d4dfBF501eD4858F25A4300B3": ["treasury", "Fantom", 3],
-    "0xA9ed98B5Fb8428d68664f3C5027c62A10d45826b": ["treasury", "Mainnet", 5],
-    # "0xD4868d98849a58F743787c77738D808376210292": ["fin_ops", "Mainnet", 3],
-    # "0x6F76C6A1059093E21D8B1C13C4e20D8335e2909F": ["politician", "Mainnet", 3],
-    "0xB76782B51BFf9C27bA69C77027e20Abd92Bcf3a8": ["ibbtc", "Mainnet", 3],
-    # "0x9faA327AAF1b564B569Cb0Bc0FDAA87052e8d92c": ["recovered", "Mainnet", 3],
-    "0x0D5eDB3ECbB15EF4EaD105c018fEd4e1d173B335": ["dev", "Optimism", 3],
     "0x8D05c5DA2a3Cb4BeB4C5EB500EE9e3Aa71670733": ["techops", "Optimism", 2],
+    "0xD0A7A8B98957b9CD3cFB9c0425AbE44551158e9e": ["treasury_vault", "Mainnet", 5],
+    "0x45b798384c236ef0d78311D98AcAEc222f8c6F54": ["treasury_vault", "Fantom", 3],
+    "0x042B32Ac6b453485e357938bdC38e0340d4b9276": ["treasury_ops", "Mainnet", 3],
+    "0xf109c50684EFa12d4dfBF501eD4858F25A4300B3": ["treasury_ops", "Fantom", 3],
+    "0xA9ed98B5Fb8428d68664f3C5027c62A10d45826b": ["treasury_voter", "Mainnet", 5],
+    "0xB76782B51BFf9C27bA69C77027e20Abd92Bcf3a8": ["ibbtc", "Mainnet", 3],
 }
 GNOSIS_URLS = {
     "Mainnet": "https://safe-transaction-mainnet.safe.global/",
@@ -65,13 +60,12 @@ EXPLORER_URLS = {
     "Optimism": "https://optimistic.etherscan.io/tx/",
 }
 MENTIONS = {
-    "dev": "<@766785323110891580>",
-    "techops": "<@&1015337028495360040>",
-    "treasury": "<@&1015338392487202887>",
-    "fin_ops": "<@&1015340237389570079>",
-    # "politician": "<@&955928657388507196>",
-    "ibbtc": "<@&1016649224575787019>",
-    # "recovered": "<@1016649224575787019>",
+    "dev": "<@766785323110891580>", # DAPP
+    "techops": "<@&1015337028495360040>", # TECH_OPS_MULTISIG
+    "treasury_vault": "<@1015337028495360040", # TREASURY_MULTISIG
+    "treasury_ops": "<@1015337028495360040", # TREASURY_MULTISIG
+    "treasury_voter": "<@1015337028495360040", # TREASURY_MULTISIG
+    "ibbtc": "<@&1015337028495360040>", # TECH_OPS_MULTISIG
 }
 HEADERS = {"accept": "application/json"}
 BOT = commands.Bot(command_prefix=["."])
