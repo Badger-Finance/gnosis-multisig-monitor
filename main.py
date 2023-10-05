@@ -62,9 +62,9 @@ EXPLORER_URLS = {
 MENTIONS = {
     "dev": "<@766785323110891580>", # DAPP
     "techops": "<@&1015337028495360040>", # TECH_OPS_MULTISIG
-    "treasury_vault": "<@1015338392487202887", # TREASURY_MULTISIG
-    "treasury_ops": "<@1015338392487202887", # TREASURY_MULTISIG
-    "treasury_voter": "<@1015338392487202887", # TREASURY_MULTISIG
+    "treasury_vault": "<@1015338392487202887>", # TREASURY_MULTISIG
+    "treasury_ops": "<@1015338392487202887>", # TREASURY_MULTISIG
+    "treasury_voter": "<@1015338392487202887>", # TREASURY_MULTISIG
     "ibbtc": "<@&1015338392487202887>", # TREASURY_MULTISIG
 }
 HEADERS = {"accept": "application/json"}
