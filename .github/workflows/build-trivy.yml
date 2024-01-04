@@ -1,0 +1,39 @@
+name: Pull Request - Build Image and Do Trivy Scan
+
+on:
+  pull_request:
+    branches:
+      - main
+
+env:
+  IMAGE_NAME: '/badger/${{ github.event.repository.name }}:${{ github.event.after }}'
+
+jobs:
+  build:
+    name: Build Container Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Service
+        uses: actions/checkout@main
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-1
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+      - name: Build, tag, and push image to Amazon ECR
+        run: |
+          docker build --build-arg BOT_TOKEN=${{ secrets.BOT_TOKEN }} -t ${{ steps.login-ecr.outputs.registry }}${{ env.IMAGE_NAME }} .
+          docker push ${{ steps.login-ecr.outputs.registry }}${{ env.IMAGE_NAME }}
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: '${{ steps.login-ecr.outputs.registry }}${{ env.IMAGE_NAME }}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
