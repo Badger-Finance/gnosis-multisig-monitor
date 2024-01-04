@@ -20,4 +20,5 @@ RUN apt-get install git -y
 RUN apt-get install libde265-0>=1.0.11-0+deb11u1 -y
 RUN apt-get install openssh-server>=1:9.2p1-2+deb12u2 -y
 
-RUN pip install setuptools==65.5.1 requests==2.26.0 discord.py==1.7.3
+RUN pip install --upgrade pip
+RUN pip install setuptools==65.5.1 requests==2.26.0 discord.py==2.3.2 aiohttp==3.9.0
